@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
-namespace Book.Models.Models
+namespace Book.Models
 {
     public class Product
     {

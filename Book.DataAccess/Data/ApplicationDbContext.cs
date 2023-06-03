@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Book.Models.Models;
+using Book.Models;
 
 namespace Book.DataAccess.Data
 {
@@ -29,5 +29,5 @@ namespace Book.DataAccess.Data
 
         }
 
-        }
+    }
 }

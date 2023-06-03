@@ -16,13 +16,13 @@ a.navbar-brand {
 }
 
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 .border-top {
@@ -43,8 +43,8 @@ button.accept-policy {
 }
 
 html {
-    position: relative;
-    min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 
@@ -536,4 +536,4 @@ bg-success {
         color: #fff;
         background-color: #578553;
         border-color: #578553;
-    }
+}
