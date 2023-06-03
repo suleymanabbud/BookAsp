@@ -1,4 +1,4 @@
-namespace Book.Models.Models
+
 namespace Book.Models
 {
     public class ErrorViewModel
