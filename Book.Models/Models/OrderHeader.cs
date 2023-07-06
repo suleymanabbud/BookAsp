@@ -26,21 +26,21 @@ namespace Book.Models.Models
         public string? Carrier { get; set; }
 
         public DateTime PaymentDate { get; set; }
-        [NotMapped]
-        public DateOnly PaymentDueDate { get; set; }
+        
+        public DateTime PaymentDueDate { get; set; }
         public string? PaymentIntentId { get; set; }
 
         [Required]
         public string PhoneNumber { get; set; }
         [Required]
-        public string StreetAddress { get; set; }
+        public string? StreetAddress { get; set; }
         [Required]
         public string City { get; set; }
         [Required]
         public string State { get; set; }
         [Required]
         public string PostalCode { get; set; }
-        [Required]
+        [Required]  
         public string Name { get; set; }
     }
 }
