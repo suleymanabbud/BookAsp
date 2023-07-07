@@ -5,7 +5,7 @@
 namespace Book.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addCopmanyToUser : Migration
+    public partial class addCompanyToUser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,21 +16,16 @@ namespace Book.DataAccess.Migrations
                 type: "int",
                 nullable: true);
 
-            migrationBuilder.AddColumn<int>(
-                name: "CopmanyId",
-                table: "AspNetUsers",
-                type: "int",
-                nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AspNetUsers_CopmanyId",
+                name: "IX_AspNetUsers_CompanyId",
                 table: "AspNetUsers",
-                column: "CopmanyId");
+                column: "CompanyId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUsers_Companies_CopmanyId",
+                name: "FK_AspNetUsers_Companies_CompanyId",
                 table: "AspNetUsers",
-                column: "CopmanyId",
+                column: "CompanyId",
                 principalTable: "Companies",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
@@ -40,20 +35,17 @@ namespace Book.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_AspNetUsers_Companies_CopmanyId",
+                name: "FK_AspNetUsers_Companies_CompanyId",
                 table: "AspNetUsers");
 
             migrationBuilder.DropIndex(
-                name: "IX_AspNetUsers_CopmanyId",
+                name: "IX_AspNetUsers_CompanyId",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
                 name: "CompanyId",
                 table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "CopmanyId",
-                table: "AspNetUsers");
         }
+
     }
 }

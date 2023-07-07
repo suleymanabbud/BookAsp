@@ -20,7 +20,7 @@ namespace Book.Models.Models
         public string? PostalCode { get; set; }
         public int? CompanyId { get; set; }
         [ForeignKey("CompanyId")]
-        
-        public Company Company { get; set; }
+        [ValidateNever]
+        public Company? Company { get; set; }
     }
 }

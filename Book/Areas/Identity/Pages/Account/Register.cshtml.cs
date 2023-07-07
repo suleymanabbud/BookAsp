@@ -166,10 +166,10 @@ namespace Book.Areas.Identity.Pages.Account
                 user.PhoneNumber = Input.PhoneNumber;
                 user.State = Input.State;
 
-                if (Input.Role == SD.Role_Company)
-                {
-                    user.CompanyId = Input.CompanyId;
-                }
+                //if (Input.Role == SD.Role_Company)
+                //{
+                //    user.CompanyId = Input.CompanyId;
+                //}
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
