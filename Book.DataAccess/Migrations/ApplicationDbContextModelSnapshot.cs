@@ -205,9 +205,6 @@ namespace Book.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SessionId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("ShippingDate")
                         .HasColumnType("datetime2");
 
