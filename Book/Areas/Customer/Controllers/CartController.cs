@@ -120,7 +120,7 @@ namespace Book.Areas.Customer.Controllers
                 var options = new SessionCreateOptions
                 {
 
-                    SuccessUrl = domain+ $"/customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
+                    SuccessUrl = domain+ $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
                     CancelUrl = domain+"customer/cart/index",
                     LineItems = new List<SessionLineItemOptions>(),
                        
@@ -146,8 +146,12 @@ namespace Book.Areas.Customer.Controllers
                 }
                 var service = new SessionService();
                 Session session = service.Create(options);
-                _unitOfWork.OrderHeader.UpdateStripePaymentID(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
-                _unitOfWork.Save();
+				ShoppingCartVM.OrderHeader.SessionId = session.Id;
+				ShoppingCartVM.OrderHeader.PaymentIntentId = session.PaymentIntentId;
+				_unitOfWork.OrderHeader.UpdateStripePaymentID(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
+				_unitOfWork.Save();
+				
+                
                 Response.Headers.Add("Location", session.Url);
                 return new StatusCodeResult(303);
 
